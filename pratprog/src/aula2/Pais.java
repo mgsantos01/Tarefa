@@ -77,10 +77,11 @@ public class Pais {
 				ResultSet resultSet = stm.executeQuery();
 
 				while (resultSet.next()) {
-					System.out.println(resultSet.getInt("id"));
-					System.out.println(resultSet.getString("nome"));
-					System.out.println(resultSet.getLong("populacao"));
-					System.out.println(resultSet.getDouble("area"));
+					pais = new Pais();
+					pais.setArea(resultSet.getDouble("area"));
+					pais.setNome(resultSet.getString("nome"));
+					pais.setId(resultSet.getInt("id"));
+					pais.setPopulacao(resultSet.getLong("populacao"));
 
 				}
 			}
